@@ -27,7 +27,7 @@ npm-debug.log*
 .project
 .settings/
 
-# --- Système ---
+# --- Systeme ---
 .DS_Store
 Thumbs.db
 desktop.ini
