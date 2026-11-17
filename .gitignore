@@ -1,0 +1,38 @@
+# --- Secrets : ne jamais envoyer sur Git ---
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# --- Backend (Java / Maven) ---
+target/
+*.class
+*.jar
+*.log
+hs_err_pid*
+
+# --- Frontend (Node / Vite) ---
+node_modules/
+dist/
+.vite/
+npm-debug.log*
+*.local
+
+# --- IDE ---
+.idea/
+*.iml
+.vscode/
+.classpath
+.project
+.settings/
+
+# --- Systeme ---
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# --- Fichiers locaux / sauvegardes ---
+*.bak
+*.tmp
+*.orig
