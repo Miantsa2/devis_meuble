@@ -1,3 +1,6 @@
+// Adresse de l'API : vide en local (proxy Vite) ; en ligne, définie par la variable VITE_API_URL
+const BASE: string = ((import.meta as any).env?.VITE_API_URL ?? '').replace(/\/$/, '')
+
 // Identifiants gardés en mémoire de session (sessionStorage) : jamais écrits dans le code.
 let auth = sessionStorage.getItem('auth') || ''
 
@@ -9,7 +12,7 @@ export function logout() { auth = ''; sessionStorage.removeItem('auth') }
 export const isLogged = () => !!auth
 
 async function request(method: string, url: string, body?: unknown): Promise<Response> {
-  const res = await fetch(url, {
+  const res = await fetch(BASE + url, {
     method,
     headers: { 'Content-Type': 'application/json', Authorization: auth },
     body: body === undefined ? undefined : JSON.stringify(body),
